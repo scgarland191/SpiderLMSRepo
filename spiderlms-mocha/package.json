@@ -1,0 +1,27 @@
+{
+    "name": "spiderlms-mocha-tests",
+    "version": "0.0.1",
+    "description": "Demo tests using spiderlms - moch api",
+    "main": "test-user.js",
+    "scripts": {
+        "test": "mocha *.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Mobiquity/Demo/spiderlms-mocha.git"
+    },
+    "author": "rakesh",
+    "license": "BSD",
+    "readmeFilename": "README.md",
+    "gitHead": "",
+    "dependencies": {
+        "custom-logger": "~0.2.1",
+        "supertest": "~0.8.1"
+    },
+    "devDependencies": {
+        "mocha": "~1.14.0"
+    },
+    "keywords": [
+        "mocha-demo"
+    ]
+}
