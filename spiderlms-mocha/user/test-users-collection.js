@@ -43,8 +43,8 @@ describe('Test User', function(){
 
                 assert.equal(res.body[2].name, 'John Smich');
                 assert.equal(res.body[2].email, 'jsmith@mobiquityinc.com');
-                assert.equal(res.body[2].role, 'admin');
-                assert.equal(res.body[2].manager_id, '');
+                assert.equal(res.body[2].role, 'user');
+                assert.equal(res.body[2].manager_id, '2');
                 assert.notEqual(res.body[2].last_login, '');
 
                 done();
