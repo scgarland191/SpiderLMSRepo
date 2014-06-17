@@ -46,7 +46,7 @@ describe('Test Assets', function(){
 
                 assert.equal(res.statusCode, 200);
 
-                assert.equal(res.id, '1');
+                assert.equal(res.body[0].id, '1');
                 assert.equal(res.body[0].title, 'Laura\'s cool pdf');
                 assert.equal(res.body[0].description, 'coolest pdf of allllll time');
                 assert.equal(res.body[0].type, 'pdf');
@@ -77,12 +77,12 @@ describe('Test Assets', function(){
                 log.info('Test2: Response code: '+res.statusCode);
                 assert.equal(res.statusCode, 201);
 
-                assert.equal(res.body[0].id, '1');
-                assert.equal(res.body[0].title, 'Laura\'s cool pdf');
-                assert.equal(res.body[0].description, 'coolest pdf of allllll time');
-                assert.equal(res.body[0].type, 'pdf');
-                assert.equal(res.body[0].url, 'https://SpiderLMS.s3.amazonaws.com/12345');
-                assert.equal(res.body[0].uploaded_by, '2');
+                assert.equal(res.body.id, '1');
+                assert.equal(res.body.title, 'Laura\'s cool pdf');
+                assert.equal(res.body.description, 'coolest pdf of allllll time');
+                assert.equal(res.body.type, 'pdf');
+                assert.equal(res.body.url, 'https://SpiderLMS.s3.amazonaws.com/12345');
+                assert.equal(res.body.uploaded_by, '2');
 
                 done();
 
