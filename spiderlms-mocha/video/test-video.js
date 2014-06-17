@@ -51,11 +51,14 @@ describe('Test Video Collection', function(){
                 log.info('Test1: Response code: '+res.statusCode);
 
                 assert.equal(res.statusCode, 201);
-                /*
-                assert.equal(res.body.id, 2);
-                assert.equal(res.body.title, 'Updating the video title!');
-                assert.equal(res.body.url, 'https://SpiderLMS.s3.amazonaws.com/12345');
-                */
+
+                assert.equal(res.id, '2');
+                assert.equal(res.title, 'Updating the video title!');
+                assert.equal(res.description, 'This is a description for the Spidey callbacks video.  yay.');
+                assert.equal(res.url, 'https://SpiderLMS.s3.amazonaws.com/12345');
+                assert.equal(res.tags, 'tag1, tag2, tag3, tag4, tags5');
+                assert.notEqual(res.created_at, '');
+                assert.notEqual(res.updated_at, '');
                 
                 done();
 
@@ -74,8 +77,21 @@ describe('Test Video Collection', function(){
                 log.info('Test2: Response code: '+res.statusCode);
                 assert.equal(res.statusCode, 200);
 
-                //assert.equal(res.body.id,4);
-                //assert.equal(res.body.name,'Sarah Conner');
+                assert.equal(res.id, '2');
+                assert.equal(res.title, 'Javascript Callbacks');
+                assert.equal(res.description, 'This is a description for the Spidey callbacks video.  yay.');
+                assert.equal(res.url, 'https://SpiderLMS.s3.amazonaws.com/23234234LSKDJFSDF');
+                assert.equal(res.tags, 'tag1, tag2, tag3, tag4');
+                assert.notEqual(res.created_at, '');
+                assert.notEqual(res.updated_at, '');
+                assert.equal(res.assets[0].id, '1')
+                assert.equal(res.assets[0].title, 'The slide show')
+                assert.equal(res.assets[0].filetype, 'pptx')
+                assert.equal(res.assets[0].fileurl, 'http://this.is.an.amazon.s3.url')
+                assert.equal(res.assets[1].id, '2')
+                assert.equal(res.assets[1].title, 'The notes')
+                assert.equal(res.assets[1].filetype, 'pdf')
+                assert.equal(res.assets[1].fileurl, 'http://this.is.an.amazon.s3.url')
 
                 done();
 
